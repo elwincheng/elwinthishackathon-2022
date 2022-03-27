@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,6 +21,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+	const navigate = useNavigate();
 
 	const user = useSelector(state => state?.auth?.authData);
 	const dispatch = useDispatch();
@@ -110,7 +113,7 @@ const NavBar = () => {
 
 					{ !user ?
 					<Button
-						onClick={() => dispatch({type: 'AUTH'})}
+						onClick={() => navigate('/signin') }
 						sx={{ my: 2, color: 'white', display: 'block' }}
 					>
 						Log in

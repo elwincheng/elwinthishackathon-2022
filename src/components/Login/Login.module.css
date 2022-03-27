@@ -1,0 +1,21 @@
+.buttons {
+		display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 20px 0px;
+
+}
+
+.paper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px;
+}
+
+.lock {
+	color: blue;
+	background-color: blue;
+}
